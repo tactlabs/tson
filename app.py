@@ -2,7 +2,8 @@
 # Imports
 #----------------------------------------------------------------------------#
 
-from flask import Flask, render_template, url_for, request, jsonify, json
+from flask import Flask, render_template, url_for, request, json
+from flask import make_response
 import requests
 import os.path
 import os
@@ -22,7 +23,7 @@ BASE_DIR    = os.path.dirname(os.path.abspath(__file__))
 
 @app.route('/', methods=['POST'])
 def index():
-    data = request.get_json(force=True)
+    data = request.get_json()
     print(data)
     response = {}
     metadata = {}
@@ -43,7 +44,9 @@ def index():
             metadata[key] = s
     response['meta'] = metadata
     print(response)
-    res=json.dumps(response).encode('utf-8')
+    #res=json.dumps(response).encode('utf-8')
+    res = make_response(json.dumps(response, ensure_ascii=False))
+    res.headers["Content-Type"] = "application/json; charset=utf-8"
     return res
 
 def traverselist(listObj, response, metadata):
