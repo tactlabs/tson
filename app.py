@@ -32,24 +32,39 @@ def index():
         if type(values) == dict:
             print('dict')
         elif type(values) == list:
-            response[str(i)]=[]
-            sub = i
-            metadata[key] = i
-            i += 1
+            meta = metadata.get(key)
+            if(meta is None):
+                response[str(i)]=[]
+                sub = i
+                metadata[key] = i
+                i += 1
+            else:
+                response[str(meta)]=[]
+                sub = meta
             list_json={}
             list_json = traverselist(values, list_json, metadata, i)
             response[str(sub)].extend(list_json)
         else:
-            response[str(i)] = values
-            print(response)
-            metadata[key] = i
-            i += 1
+            meta = metadata.get(key)
+            print('meta_{}'.format(meta))
+            if(meta is None):
+                response[str(i)] = values
+                metadata[key] = i
+                i += 1
+            else:
+                response[str(meta)] = values
     response['meta'] = metadata
     print(response)
     #res=json.dumps(response).encode('utf-8')
     res = make_response(json.dumps(response, ensure_ascii=False))
     res.headers["Content-Type"] = "application/json; charset=utf-8"
     return res
+
+def swap_metadata(metadata):
+    metadata={}
+    for key, value in metadata.items():
+        metadata[value] = key
+    return metadata
 
 def traverselist(listObj, response, metadata, i):
     list_json=[]
@@ -59,10 +74,11 @@ def traverselist(listObj, response, metadata, i):
             print (value)
             print ('---------')
             if(type(value) is dict):
-                dict_json = traversedic(value, response, metadata, i)
+                dict_json, i = traversedic(value, response, metadata, i)
+                print(i)
                 list_json.append(dict_json)
                 print('list json')
-                print(list_json)
+                # print(list_json)
             else:
                 print ("-" + str(value))
                 print (type(value))
@@ -76,12 +92,18 @@ def traversedic(dic, response, metadata, i):
         elif (type(value) is list):
             traverselist(conn, value, url)
         else:
-            dict_json[str(i)] = value
-            metadata[key] = i
-            i += 1
+            meta = metadata.get(key)
+            print('meta_{}'.format(meta))
+            if(meta is None):
+                dict_json[str(i)] = value
+                metadata[key] = i
+                i += 1
+            else:
+                dict_json[str(meta)] = value
+            
     print('dict json')
-    print(dict_json)
-    return dict_json
+    # print(dict_json)
+    return dict_json, i
 #----------------------------------------------------------------------------#
 # Launch.
 #----------------------------------------------------------------------------#

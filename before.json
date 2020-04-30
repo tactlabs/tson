@@ -5,7 +5,7 @@
     "src": "Images/Sun.png",
     "vOffset": 250,
     "debug": "on",
-    "firstname": "arun",
+    "firstName": "arun",
     "personDetailsList": [
         {
             "firstName": "arun",
