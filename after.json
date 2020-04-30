@@ -249,16 +249,16 @@
         }
     ],
     "meta": {
-        "alignment": 0,
-        "cityOfPersonLiving": 10,
-        "dateOfBirth": 9,
-        "debug": 5,
-        "firstName": 6,
-        "hOffset": 1,
-        "lastName": 8,
-        "name": 2,
-        "personDetailsList": 7,
-        "src": 3,
-        "vOffset": 4
+        "0": "alignment",
+        "1": "hOffset",
+        "10": "cityOfPersonLiving",
+        "2": "name",
+        "3": "src",
+        "4": "vOffset",
+        "5": "debug",
+        "6": "firstName",
+        "7": "personDetailsList",
+        "8": "lastName",
+        "9": "dateOfBirth"
     }
 }

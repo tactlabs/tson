@@ -53,7 +53,7 @@ def index():
                 i += 1
             else:
                 response[str(meta)] = values
-    response['meta'] = metadata
+    response['meta'] = swap_metadata(metadata)
     print(response)
     #res=json.dumps(response).encode('utf-8')
     res = make_response(json.dumps(response, ensure_ascii=False))
@@ -61,10 +61,10 @@ def index():
     return res
 
 def swap_metadata(metadata):
-    metadata={}
+    meta_data={}
     for key, value in metadata.items():
-        metadata[value] = key
-    return metadata
+        meta_data[str(value)] = str(key)
+    return meta_data
 
 def traverselist(listObj, response, metadata, i):
     list_json=[]
