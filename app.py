@@ -27,21 +27,23 @@ def index():
     print(data)
     response = {}
     metadata = {}
+    i = 0
     for key, values in data.items():
         if type(values) == dict:
             print('dict')
         elif type(values) == list:
-            s = encode(key)
-            response[str(s)]=[]
-            metadata[key] = s
+            response[str(i)]=[]
+            sub = i
+            metadata[key] = i
+            i += 1
             list_json={}
-            list_json = traverselist(values, list_json, metadata)
-            response[str(s)].extend(list_json)
+            list_json = traverselist(values, list_json, metadata, i)
+            response[str(sub)].extend(list_json)
         else:
-            s = encode(key)
-            response[str(s)] = values
+            response[str(i)] = values
             print(response)
-            metadata[key] = s
+            metadata[key] = i
+            i += 1
     response['meta'] = metadata
     print(response)
     #res=json.dumps(response).encode('utf-8')
@@ -49,7 +51,7 @@ def index():
     res.headers["Content-Type"] = "application/json; charset=utf-8"
     return res
 
-def traverselist(listObj, response, metadata):
+def traverselist(listObj, response, metadata, i):
     list_json=[]
     if len(listObj) > 0:
         for value in listObj:
@@ -57,7 +59,7 @@ def traverselist(listObj, response, metadata):
             print (value)
             print ('---------')
             if(type(value) is dict):
-                dict_json = traversedic(value, response, metadata)
+                dict_json = traversedic(value, response, metadata, i)
                 list_json.append(dict_json)
                 print('list json')
                 print(list_json)
@@ -66,7 +68,7 @@ def traverselist(listObj, response, metadata):
                 print (type(value))
     return list_json
                 
-def traversedic(dic, response, metadata):
+def traversedic(dic, response, metadata, i):
     dict_json = {}
     for key, value in dic.items():
         if (type(value) is dict):
@@ -74,9 +76,9 @@ def traversedic(dic, response, metadata):
         elif (type(value) is list):
             traverselist(conn, value, url)
         else:
-            s = encode(key)
-            dict_json[str(s)] = value
-            metadata[key] = s
+            dict_json[str(i)] = value
+            metadata[key] = i
+            i += 1
     print('dict json')
     print(dict_json)
     return dict_json
