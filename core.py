@@ -2,44 +2,47 @@ from flask import Flask, render_template, url_for, request, json
 from flask import make_response
 
 
+STR_RESULT  =   'result'
+STR_META    =   'meta'
+
 def convert_json_to_tson(json_):
     response = {}
     metadata = {}
-    i = 0
+    unique_key = 0
     for key, values in json_.items():
         if type(values) == dict:
             print('dict')
         elif type(values) == list:
             meta = metadata.get(key)
             if(meta is None):
-                response[str(i)]=[]
-                sub = i
-                metadata[key] = i
-                i += 1
+                response[str(unique_key)]=[]
+                sub = unique_key
+                metadata[key] = unique_key
+                unique_key += 1
             else:
                 response[str(meta)]=[]
                 sub = meta
             list_json={}
-            list_json = traverselist(values, list_json, metadata, i)
+            list_json, unique_key = traverselist(values, list_json, metadata, unique_key)
             response[str(sub)].extend(list_json)
         else:
             meta = metadata.get(key)
             print('meta_{}'.format(meta))
             if(meta is None):
-                response[str(i)] = values
-                metadata[key] = i
-                i += 1
+                response[str(unique_key)] = values
+                metadata[key] = unique_key
+                unique_key += 1
             else:
                 response[str(meta)] = values
     tson_response = {}
-    tson_response['result'] = response
-    tson_response['meta'] = swap_metadata(metadata)
+    tson_response[STR_RESULT] = response
+    tson_response[STR_META] = swap_metadata(metadata)
     res = make_response(json.dumps(tson_response, ensure_ascii=False))
     res.headers["Content-Type"] = "application/json; charset=utf-8"
     print(res)
     return res
 
-def traversedic(dic, response, metadata, i):
+def traversedic(dic, response, metadata, unique_key):
     dict_json = {}
     for key, value in dic.items():
         if (type(value) is dict):
@@ -47,19 +50,20 @@ def traversedic(dic, response, metadata, i):
         elif (type(value) is list):
             traverselist(conn, value, url)
         else:
+            print(key)
             meta = metadata.get(key)
             print('meta_{}'.format(meta))
             if(meta is None):
-                dict_json[str(i)] = value
-                metadata[key] = i
-                i += 1
+                dict_json[str(unique_key)] = value
+                metadata[key] = unique_key
+                unique_key += 1
             else:
                 dict_json[str(meta)] = value
     # print('dict json')
     # print(dict_json)
-    return dict_json, i
+    return dict_json, unique_key
 
-def traverselist(listObj, response, metadata, i):
+def traverselist(listObj, response, metadata, unique_key):
     list_json=[]
     if len(listObj) > 0:
         for value in listObj:
@@ -67,15 +71,15 @@ def traverselist(listObj, response, metadata, i):
             print (value)
             print ('---------')
             if(type(value) is dict):
-                dict_json, i = traversedic(value, response, metadata, i)
-                print(i)
+                dict_json, unique_key = traversedic(value, response, metadata, unique_key)
+                print(unique_key)
                 list_json.append(dict_json)
                 # print('list json')
                 # print(list_json)
             else:
                 print ("-" + str(value))
                 print (type(value))
-    return list_json
+    return list_json, unique_key
 
 def swap_metadata(metadata):
     meta_data={}
@@ -86,9 +90,9 @@ def swap_metadata(metadata):
 def convert_tson_to_json(tson):
     response = {}
     try:
-        meta_data = tson['meta']
+        meta_data = tson[STR_META]
         print(meta_data)
-        json_ = tson['result']
+        json_ = tson[STR_RESULT]
         for key, values in json_.items():
             if type(values) == dict:
                 print('dict')
