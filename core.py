@@ -74,7 +74,6 @@ def traverselist(listObj, response, metadata, unique_key):
                 dict_json, unique_key = traversedic(value, response, metadata, unique_key)
                 print(unique_key)
                 list_json.append(dict_json)
-                # print('list json')
                 # print(list_json)
             else:
                 print ("-" + str(value))
