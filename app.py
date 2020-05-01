@@ -2,7 +2,7 @@
 # Imports
 #----------------------------------------------------------------------------#
 
-from flask import Flask, render_template, url_for, request, json
+from flask import Flask, render_template, url_for, request, json, jsonify
 from flask import make_response
 import requests
 import os.path
@@ -21,17 +21,33 @@ BASE_DIR    = os.path.dirname(os.path.abspath(__file__))
 # Controllers.
 #----------------------------------------------------------------------------#
 
-@app.route('/convert_to_tson', methods=['POST'])
+'''
+    http://127.0.0.1:4000/
+'''
+@app.route('/', methods=['GET'])
+def home():
+    result = {
+        'note' : 'welcome to tson'
+    }
+    return jsonify(result)
+
+'''
+    http://127.0.0.1:4000/to/tson
+'''
+@app.route('/to/tson', methods=['POST'])
 def convert_to_tson():
     data = request.get_json()
-    print(data)
+    # print(data)
     res = convert_json_to_tson(data)
     return res
 
-@app.route('/convert_to_json', methods=['POST'])
+'''
+    http://127.0.0.1:4000/to/json
+'''
+@app.route('/to/json', methods=['POST'])
 def convert_to_json():
     tson = request.get_json()
-    print(tson)
+    # print(tson)
     res = convert_tson_to_json(tson)
     return res
 
