@@ -1,0 +1,251 @@
+{
+    "alignment": "center",
+    "hOffset": 250,
+    "name": "sun1",
+    "src": "Images/Sun.png",
+    "vOffset": 250,
+    "debug": "on",
+    "firstName": "arun",
+    "personDetailsList": [
+        {
+            "firstName": "arun",
+			"lastName":"raj",
+			"dateOfBirth":"1989-12-12",
+            "cityOfPersonLiving": "madurai"
+        },
+        {
+             "firstName": "kumar",
+			"lastName":"raj",
+			"dateOfBirth":"1989-12-11",
+            "cityOfPersonLiving": "madurai"
+        },
+        {
+            "firstName": "arun",
+			"lastName":"raj",
+			"dateOfBirth":"1989-12-10",
+            "cityOfPersonLiving": "madurai"
+        },
+        {
+            "firstName": "baskar",
+			"lastName":"raj",
+			"dateOfBirth":"1989-12-09",
+            "cityOfPersonLiving": "madurai"
+        },
+        {
+           "firstName": "raja",
+			"lastName":"ram",
+			"dateOfBirth":"1989-12-08",
+            "cityOfPersonLiving": "madurai"
+        },
+		{
+           "firstName": "ram",
+			"lastName":"kumar",
+			"dateOfBirth":"1989-12-07",
+            "cityOfPersonLiving": "madurai"
+        },
+        {
+            "firstName": "johnson",
+			"lastName":"raj",
+			"dateOfBirth":"1989-12-01",
+            "cityOfPersonLiving": "madurai"
+        },
+        {
+            "firstName": "john",
+			"lastName":"raj",
+			"dateOfBirth":"1989-12-02",
+            "cityOfPersonLiving": "madurai"
+        },
+        {
+            "firstName": "kumar",
+			"lastName":"john",
+			"dateOfBirth":"1989-12-16",
+            "cityOfPersonLiving": "madurai"
+        },
+        {
+            "firstName": "arun",
+			"lastName":"raj",
+			"dateOfBirth":"1989-12-20",
+            "cityOfPersonLiving": "madurai"
+        },
+		{
+            "firstName": "kumar",
+			"lastName":"raj",
+			"dateOfBirth":"1989-12-11",
+            "cityOfPersonLiving": "madurai"
+        },
+        {
+            "firstName": "kumar",
+			"lastName":"raj",
+			"dateOfBirth":"1989-12-11",
+            "cityOfPersonLiving": "madurai"
+        },
+        {
+            "firstName": "kumar",
+			"lastName":"raj",
+			"dateOfBirth":"1989-12-11",
+            "cityOfPersonLiving": "madurai"
+        },
+        {
+            "firstName": "kumar",
+			"lastName":"raj",
+			"dateOfBirth":"1989-12-11",
+            "cityOfPersonLiving": "madurai"
+        },
+        {
+            "firstName": "kumar",
+			"lastName":"raj",
+			"dateOfBirth":"1989-12-11",
+            "cityOfPersonLiving": "madurai"
+        },
+		{
+           "firstName": "kumar",
+			"lastName":"raj",
+			"dateOfBirth":"1989-12-11",
+            "cityOfPersonLiving": "madurai"
+        },
+        {
+            "firstName": "kumar",
+			"lastName":"raj",
+			"dateOfBirth":"1989-12-11",
+            "cityOfPersonLiving": "madurai"
+        },
+        {
+            "firstName": "kumar",
+			"lastName":"raj",
+			"dateOfBirth":"1989-12-11",
+            "cityOfPersonLiving": "madurai"
+        },
+        {
+           "firstName": "kumar",
+			"lastName":"raj",
+			"dateOfBirth":"1989-12-11",
+            "cityOfPersonLiving": "madurai"
+        },
+        {
+            "firstName": "kumar",
+			"lastName":"raj",
+			"dateOfBirth":"1989-12-11",
+            "cityOfPersonLiving": "madurai"
+        },
+		{
+            "firstName": "kumar",
+			"lastName":"raj",
+			"dateOfBirth":"1989-12-11",
+            "cityOfPersonLiving": "madurai"
+        },
+        {
+            "firstName": "kumar",
+			"lastName":"raj",
+			"dateOfBirth":"1989-12-11",
+            "cityOfPersonLiving": "madurai"
+        },
+        {
+            "firstName": "kumar",
+			"lastName":"raj",
+			"dateOfBirth":"1989-12-11",
+            "cityOfPersonLiving": "madurai"
+        },
+        {
+            "firstName": "kumar",
+			"lastName":"raj",
+			"dateOfBirth":"1989-12-11",
+            "cityOfPersonLiving": "madurai"
+        },
+        {
+            "firstName": "kumar",
+			"lastName":"raj",
+			"dateOfBirth":"1989-12-11",
+            "cityOfPersonLiving": "madurai"
+        },
+		{
+            "firstName": "kumar",
+			"lastName":"raj",
+			"dateOfBirth":"1989-12-11",
+            "cityOfPersonLiving": "madurai"
+        },
+        {
+            "firstName": "kumar",
+			"lastName":"raj",
+			"dateOfBirth":"1989-12-11",
+            "cityOfPersonLiving": "madurai"
+        },
+        {
+            "firstName": "kumar",
+			"lastName":"raj",
+			"dateOfBirth":"1989-12-11",
+            "cityOfPersonLiving": "madurai"
+        },
+        {
+            "firstName": "kumar",
+			"lastName":"raj",
+			"dateOfBirth":"1989-12-11",
+            "cityOfPersonLiving": "madurai"
+        },
+        {
+            "firstName": "kumar",
+			"lastName":"raj",
+			"dateOfBirth":"1989-12-11",
+            "cityOfPersonLiving": "madurai"
+        },
+		{
+            "firstName": "kumar",
+			"lastName":"raj",
+			"dateOfBirth":"1989-12-11",
+            "cityOfPersonLiving": "madurai"
+        },
+        {
+            "firstName": "kumar",
+			"lastName":"raj",
+			"dateOfBirth":"1989-12-11",
+            "cityOfPersonLiving": "madurai"
+        },
+        {
+            "firstName": "kumar",
+			"lastName":"raj",
+			"dateOfBirth":"1989-12-11",
+            "cityOfPersonLiving": "madurai"
+        },
+        {
+            "firstName": "kumar",
+			"lastName":"raj",
+			"dateOfBirth":"1989-12-11",
+            "cityOfPersonLiving": "madurai"
+        },
+        {
+            "firstName": "kumar",
+			"lastName":"raj",
+			"dateOfBirth":"1989-12-11",
+            "cityOfPersonLiving": "madurai"
+        },
+		{
+            "firstName": "kumar",
+			"lastName":"raj",
+			"dateOfBirth":"1989-12-11",
+            "cityOfPersonLiving": "madurai"
+        },
+        {
+            "firstName": "kumar",
+			"lastName":"raj",
+			"dateOfBirth":"1989-12-11",
+            "cityOfPersonLiving": "madurai"
+        },
+        {
+            "firstName": "kumar",
+			"lastName":"raj",
+			"dateOfBirth":"1989-12-11",
+            "cityOfPersonLiving": "madurai"
+        },
+        {
+            "firstName": "kumar",
+			"lastName":"raj",
+			"dateOfBirth":"1989-12-11",
+            "cityOfPersonLiving": "madurai"
+        },
+        {
+            "firstName": "kumar",
+			"lastName":"raj",
+			"dateOfBirth":"1989-12-11",
+            "cityOfPersonLiving": "madurai"
+        }
+    ]
+}
