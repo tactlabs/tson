@@ -1,9 +1,13 @@
-from flask import Flask, render_template, url_for, request, json
-from flask import make_response
+# from flask import Flask, render_template, url_for, request, json
+# from flask import make_response
 
 
 STR_RESULT  =   'result'
 STR_META    =   'meta'
+
+def testone(json_):
+
+    return json_
 
 def convert_json_to_tson(json_):
 
@@ -61,11 +65,13 @@ def convert_json_to_tson(json_):
 
     tson_response[STR_META] = swap_metadata(metadata)
 
-    res = make_response(json.dumps(tson_response, ensure_ascii = False))
+    # res = make_response(json.dumps(tson_response, ensure_ascii = False))
 
-    res.headers["Content-Type"] = "application/json; charset=utf-8"
+    # res.headers["Content-Type"] = "application/json; charset=utf-8"
 
-    return res, tson_response
+    # return res, tson_response
+
+    return tson_response
 
 def traversedic(dic, response, metadata, unique_key):
 
@@ -186,11 +192,11 @@ def convert_tson_to_json(tson):
 
         print(response)
 
-        res = make_response(json.dumps(response, ensure_ascii = False))
+        # res = make_response(json.dumps(response, ensure_ascii = False))
 
-        res.headers["Content-Type"] = "application/json; charset=utf-8"
+        # res.headers["Content-Type"] = "application/json; charset=utf-8"
 
-        return res
+        return response
 
     except KeyError as e:
 
@@ -200,11 +206,12 @@ def convert_tson_to_json(tson):
 
         failure_response['message'] = 'No Metadata or result object found for {}'.format(str(e))
 
-        res = make_response(json.dumps(failure_response, ensure_ascii = False), 400)
+        # res = make_response(json.dumps(failure_response, ensure_ascii = False), 400)
 
-        res.headers["Content-Type"] = "application/json; charset=utf-8"
+        # res.headers["Content-Type"] = "application/json; charset=utf-8"
 
-        return res
+        # return res
+        return failure_response
 
 
 def traverse_to_dic(dic, response, metadata):
@@ -258,3 +265,18 @@ def traverse_to_list(listObj, response, metadata):
                 print (type(value))
                 
     return list_json
+
+def startpy():
+
+    json_ = {
+        "one" : "two"
+    }
+
+    tson_ = convert_json_to_tson(json_)
+    print(tson_)
+
+    return None
+
+if __name__ == '__main__':
+    
+    startpy()
