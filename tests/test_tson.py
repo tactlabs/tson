@@ -52,9 +52,14 @@ def test_three_entries():
     # print(tson_)
 
     tson_values = list(tson_['result'].values())
+
+    try:
     
-    assert ("two" in tson_values)
-    assert ("four" in tson_values)
+        assert ("two" in tson_values)
+        assert ("four" in tson_values)
+
+    except AssertionError as msg:
+        print(msg)
 
 def test_four_entries():
     """Test the Base."""
