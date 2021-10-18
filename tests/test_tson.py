@@ -61,28 +61,28 @@ def test_three_entries():
     except AssertionError as msg:
         print(msg)
 
-def test_four_entries():
-    """Test the Base."""
+# def test_four_entries():
+#     """Test the Base."""
 
-    json_ = {
-        "list":[
-            {
-            "one" : "two"
-            },
-            {
-            "three" : "four"
-            },
-            {
-                "colors": ["red", "white", "blue"]
-            }
-        ]
-    }
+#     json_ = {
+#         "list":[
+#             {
+#             "one" : "two"
+#             },
+#             {
+#             "three" : "four"
+#             },
+#             {
+#                 "colors": ["red", "white", "blue"]
+#             }
+#         ]
+#     }
 
-    tson_ = core.convert_json_to_tson(json_)
-    # print(tson_)
+#     tson_ = core.convert_json_to_tson(json_)
+#     # print(tson_)
 
-    tson_values = list(tson_['result'].values())
+#     tson_values = list(tson_['result'].values())
     
-    assert ("two" in tson_values)
-    assert ("four" in tson_values)
-    assert (["red", "white", "blue"] in tson_values)
+#     assert ("two" in tson_values)
+#     assert ("four" in tson_values)
+#     assert (["red", "white", "blue"] in tson_values)
